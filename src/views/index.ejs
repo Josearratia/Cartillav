@@ -1,0 +1,73 @@
+
+<% include partials/_header %>
+
+    <div class="container">
+        <div class="row">
+            <!-- FORM -->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/buscar" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="curp" placeholder="Ingresa la curp" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Buscar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- LIST -->
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Cartilla</th>
+                            <th>Edad</th>
+                            <th>enlace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Niñas y niños</td>
+                            <td>0 a 9</td>
+                            <td>
+                                <a href="" class="btn btn-dark btn-block">ir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Adolescentes</td>
+                            <td>10 a 19</td>
+                            <td>
+                                <a href="" class="btn btn-dark btn-block">ir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mujeres</td>
+                            <td>20 a 59</td>
+                            <td>
+                                <a href="" class="btn btn-dark btn-block">ir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hombres</td>
+                            <td>20 a 59</td>
+                            <td>
+                                <a href="" class="btn btn-dark btn-block">ir</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Adulto mayor</td>
+                            <td>60+</td>
+                            <td>
+                                <a href="" class="btn btn-dark btn-block">ir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<% include partials/_footer %>
