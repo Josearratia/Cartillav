@@ -1,0 +1,46 @@
+<% include partials/_header %>
+<!-- LIST -->
+<div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Vacuna</th>
+                    <th>Enfermedad que previene</th>
+                    <th>Dosis</th>
+                    <th>Edad y frecuencia</th>
+                    <th>Fecha de vacunacion</th>
+                    <% if(session){  %>
+                        <th>Opciones</th>
+                    <% }%>
+                </tr>
+            </thead>
+            
+                    <tbody>
+                            <% for(var i = 0; i < docs.length; i++){ %>
+                            <% if(docs[i].anos){ %>
+                            <% if(docs[i].edad >= 10 && docs[i].edad <= 19 ){ %>
+                                <tr>
+                                    <td><%= docs[i].vacuna %></td>
+                                    <td><%= docs[i].Enfermedadprevenida %></td>
+                                    <td><%= docs[i].Dosis %></td>
+                                    <% if(docs[i].meses){ %>
+                                        <td>Meses: <%= docs[i].edad %> Frecuencia: <%= docs[i].frecuencia %></td>
+                                    <%}%>
+                                    <% if(docs[i].anos){ %>
+                                            <td>Años: <%= docs[i].edad %> Frecuencia: <%= docs[i].frecuencia %></td>
+                                    <%}%>
+                                    <td><%= docs[i].FechaVacunacion %></td>
+                                    <% if(session){  %>
+                                        <% include btn %>
+                                    <%  }%>
+                                </tr>
+                                <%}%>
+                                <%}%>
+                            <% } %>
+                        </tbody>
+            
+        </table>
+    </div>
+    </div>
+    </div>
+<% include partials/_footer %>

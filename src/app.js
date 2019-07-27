@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const session = require('express-session');
 const app = express();
 
 //connectiong to db 
@@ -23,6 +24,11 @@ app.set('view engine', 'ejs');
 //middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
+app.use(session({
+    secret: "123ajdoiasjdoi",
+    resave: false,
+    saveUninitialized: false
+}));
 
 //routes
 app.use('/', indexRoutes);

@@ -1,22 +1,15 @@
 
 <% include partials/_header %>
-
 <div class="container">
         <div class="row">
             <!-- FORM -->
             <div class="col-md-5">
-                <div class="card">
-                    <div class="card-body">
-                        <form action="/buscar" method="post">
-                            <div class="form-group">
-                                <input type="text" name="curp" placeholder="Ingresa la curp" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block">Buscar</button>
-                            </div>
-                        </form>
+                    <div class="card border-success mb-3">
+                        <h5>Curp: <%= docs[0].curp%></h5>
+                        <h5>Nombre: <%= docs[0].nombre %></h5>
+                        <h5>Fecha De Nacimiento: <%= docs[0].fechanacimiento.toISOString() %></h5>
+                        <h5>Sexo: <%= docs[0].sexo %></h5>
                     </div>
-                </div>
             </div>
 
             <!-- LIST -->
@@ -26,33 +19,48 @@
                         <tr>
                             <th>Cartilla</th>
                             <th>Edad</th>
+                            <th>enlace</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Niñas y niños</td>
                             <td>0 a 9</td>
-                            
+                            <td>
+                                <a href="/niñas_y_niños" class="btn btn-dark btn-block">ir</a>
+                            </td>
                         </tr>
                         <tr>
                             <td>Adolescentes</td>
                             <td>10 a 19</td>
-                            
+                            <td>
+                                <a href="/adolescentes" class="btn btn-dark btn-block">ir</a>
+                            </td>
                         </tr>
+                        <% if(docs[0].sexo == 'Mujer'){ %>
                         <tr>
                             <td>Mujeres</td>
                             <td>20 a 59</td>
-                            
+                            <td>
+                                <a href="/mujeres" class="btn btn-dark btn-block">ir</a>
+                            </td>
                         </tr>
+                        <% } %>
+                        <% if(docs[0].sexo == 'Hombre'){ %>
                         <tr>
                             <td>Hombres</td>
                             <td>20 a 59</td>
-                            
+                            <td>
+                                <a href="/hombres" class="btn btn-dark btn-block">ir</a>
+                            </td>
                         </tr>
+                        <% } %>
                         <tr>
                             <td>Adulto mayor</td>
                             <td>60+</td>
-                            
+                            <td>
+                                <a href="/adulto" class="btn btn-dark btn-block">ir</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
