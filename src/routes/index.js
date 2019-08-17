@@ -3,6 +3,7 @@ const router = express.Router();
 const BuscaCurp = require('../models/task');
 const logind = require('../models/login');
 const vacuna = require('../models/consultas');
+const nvacuna = require('../models/Vacunas_biologico');
 
 
 router.get('/', (req, res, next) => {
@@ -155,6 +156,27 @@ router.get('/session/atencionpaciente',(req, res, next) => {
     }
 });
 
+router.get('/session/newvacuna',(req, res, next) => {
+    if(!req.session.user_id){
+        res.redirect('/login');
+    }else
+    {
+        res.render('newvacuna', {session:req.session.user_id, paginalogin: false, existente: false , nuevo: false, Campo: false});
+    }
+});
+
+router.post('/session/vacunasave', async(req,res,next) => {
+    if(!req.session.user_id){
+        res.redirect('/login');
+    }else
+    {
+        console.log(req.body);
+        const vacuna =  new nvacuna(req.body);
+        await vacuna.save();
+        res.redirect('/session/newvacuna');
+    }
+});
+
 router.post('/session/nvacuna', async(req, res, next) =>{
     if(!req.session.user_id){
         res.redirect('/login');
@@ -279,7 +301,7 @@ router.get('/addp', async (req, res, next) => {
 
 /*
 router.get('/addD', async (req, res, next) => {
-    const usuario = new logind({ usuario: 'admin', password: 'admin'});
+    const usuario = new logind();
     usuario.save();
     res.send('guardado');
 });*/

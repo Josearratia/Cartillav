@@ -1,0 +1,37 @@
+<% include partials/_header %>
+<div class="card" style="width: 700px; margin-left: 24%; margin-top: 60px;">
+        <div class="card-header">
+           Vacuna
+         </div>
+         <div class="card-body">
+             <form action="/session/vacunasave" method="post">
+                <div class="form-group">
+                    <label>Clave</label>
+                    <input type="text" class="form-control" name="clave" placeholder="Clave">
+                  </div>
+                 <div class="form-group">
+                   <label>Vacuna</label>
+                   <input type="text" class="form-control" name="vacuna" placeholder="Vacuna">
+                   <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                 </div>
+                 <div class="form-group">
+                   <label>Poblacion Blanco</label>
+                   <input type="text" name="poblacion_blanco" class="form-control"  placeholder="Poblacion Blanco">
+                </div>
+                <div class="form-group">
+                    <label>Calculo</label>
+                    <input type="text" name="calculo" class="form-control"  placeholder="Calculo">
+                </div>
+                <div class="form-group">
+                    <label>Dosis Por Esquema</label>
+                    <input type="text" name="dosis_por_esquema" class="form-control"  placeholder="Dosis Por Esquema">
+                </div>
+                <div class="form-group">
+                    <label>Factor De Perdida</label>
+                    <input type="text" name="factor_de_perdida" class="form-control"  placeholder="Factor De Perdida">
+                </div>
+               <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+           </form>
+       </div>
+   </div>
+<% include partials/_footer %>

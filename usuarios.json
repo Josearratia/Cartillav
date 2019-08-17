@@ -1,0 +1,5 @@
+[
+{"_id":{"$oid":"5d3954afd745a708644f39cb"},"usuario":"admin","password":"admin","__v":0},
+{"_id":{"$oid":"5d3954c7d745a708644f39cc"},"usuario":"mono","password":"mono","__v":0},
+{"_id":{"$oid":"5d4092b152d60b11c817c799"},"usuario":"limon","password":"limon","__v":0}
+]

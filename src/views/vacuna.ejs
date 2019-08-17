@@ -27,21 +27,33 @@
                   </div>
                  <div class="form-group">
                    <label>Vacuna</label>
-                   <input type="text" class="form-control" name="vacuna" placeholder="Vacuna">
+                   <select id="vacunas" class="form-control" name="vacuna">
+                      <option selected value="sida">sida</option>
+                      <option value="sida2">sida2</option>
+                   </select>
                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                  </div>
-                 <div class="form-group">
+                 
+                 <!--<div class="form-group">
                    <label>Enfermedad que previene</label>
                    <input type="text" name="enfermedad" class="form-control"  placeholder="Enfermedad que previene">
-                </div>
+                </div>-->
+
                 <div class="form-group">
                     <label>Dosis</label>
-                    <input type="text" name="dosis" class="form-control"  placeholder="Dosis">
+                    <select id="Dosis" class="form-control" name="dosis">
+                      <option value="dosis1">dosis1</option>
+                      <option value="dosis2">dosis2</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Frecuencia</label>
-                    <input type="text" name="frecuencia" class="form-control"  placeholder="Frecuencia">
+                    <select name="frecuencia" class="form-control" id="Frecuencia">
+                        <option value="frecuencia1">frecuencia1</option>
+                        <option value="frecuencia2">frecuencia2</option>
+                    </select>
                 </div>
+
                 <div class="form-group">
                     <label>Seleccione Tipo De Edad Del Paciente</label>
                     <select id="inputState" class="form-control" name="sexo">
@@ -49,10 +61,12 @@
                             <option value="Meses">Meses</option>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label>Edad</label>
                     <input type="number" name="edad" class="form-control"  placeholder="Edad">
                 </div>
+
                <div class="form-group">
                        <label>Fecha De Vacunacion</label>
                        <div class="form-group">
